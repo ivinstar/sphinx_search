@@ -1,0 +1,8 @@
+.author= "#{@collection.date}, #{@collection.author}"
+
+%h3.text-warning
+  != Article.colorize @collection.title, @word
+
+%br
+  %br
+    != Article.colorize @collection.content, @word

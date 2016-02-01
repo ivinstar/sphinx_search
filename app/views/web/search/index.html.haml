@@ -1,15 +1,20 @@
 
 = simple_form_for :search, url: search_index_path, html: {method: :get, class: 'form-search'} do |f|
   .input-append
-    = f.input :text, label: false, placeholder: "Введите текст для поиска…", required: false, input_html: {class: 'span2 search-query'}
+    = f.input :text, label: false, placeholder: "Введите текст для поиска…", required: false, input_html: {class: 'span2 search-query', value: @q}
     = f.submit 'Поиск', class: 'btn'
 
-
-%br
-  %br
-  %h3= 'Результат поиска'
+.container.inner
   
-- @collection.each do |c|
-  = c.author
-  = c.title
-  = c.content  
+  %br
+    %br
+    -#%h3= 'Результат поиска'
+
+  - unless @collection.blank?
+    - @collection.each do |c|
+      .item
+        .author= "#{c.date}, #{c.author}"
+        = link_to c.title, search_path(c, word:@q), class: 'title', 'target' => '_blank'
+        .desc-short= c.short 
+  - else
+    Ничего не найдено         

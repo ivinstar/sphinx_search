@@ -25,3 +25,34 @@
 .span2.search-query {
 	width: 450px;
 }
+
+.desc-short {
+	margin-top: 15px;
+}
+
+
+a.title {
+	font-size: 18px;
+	color: #c09853;
+}
+
+.author {
+	margin-bottom: 10px;
+}
+
+
+.item {
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #000;
+    margin-bottom: 15px;
+}
+
+.inner {
+	padding: 0 15px 0 15px;
+}
+
+.text-success {
+	display: inline;
+	color: #000;
+	background: #AAEAAA;
+}

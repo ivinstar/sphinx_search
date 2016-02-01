@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    padding-top: 60px;
+}
+
+.search_text {
+	display: inline-block;
+}
+
+.span2.search-query {
+	width: 450px;
+}

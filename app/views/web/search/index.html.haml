@@ -1,0 +1,15 @@
+
+= simple_form_for :search, url: search_index_path, html: {method: :get, class: 'form-search'} do |f|
+  .input-append
+    = f.input :text, label: false, placeholder: "Введите текст для поиска…", required: false, input_html: {class: 'span2 search-query'}
+    = f.submit 'Поиск', class: 'btn'
+
+
+%br
+  %br
+  %h3= 'Результат поиска'
+  
+- @collection.each do |c|
+  = c.author
+  = c.title
+  = c.content  
